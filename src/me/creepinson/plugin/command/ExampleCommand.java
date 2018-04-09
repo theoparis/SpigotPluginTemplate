@@ -20,22 +20,35 @@ public class ExampleCommand implements CommandExecutor {
 	public boolean onCommand(CommandSender sender, Command cmd, String cmdLabel, String[] args) {
 
 		// Checks if the sender is sending from the console
-		// CHAT_PREFIX is the variable from the Template plugin class and can be removed if unwanted.
+		// CHAT_PREFIX is the variable from the Template plugin class and can be removed
+		// if unwanted.
 		if (sender instanceof ConsoleCommandSender) {
 			sender.sendMessage(CHAT_PREFIX + ChatColor.RED + "You cannot run this command from the console!");
 			return false;
-		} 
-		// Since we made sure the sender is a player, we can create a new player variable using our sender
-		Player player =  (Player) sender;
-		 // checks if First argument (/command FIRSTARGUMENT) is equal to the string sayhi
+		}
+		// Since we made sure the sender is a player, we can create a new player
+		// variable using our sender
+		Player player = (Player) sender;
+
+		
+		// checks if there are no arguments at all (/command)
+		if (args.length == 0) {
+			player.sendMessage(CHAT_PREFIX + ChatColor.RED + "Invalid usage - there are no arguments.");
+			return false;
+		}
+		
+		// checks if First argument (/command FIRSTARGUMENT) is equal to the string
+		// sayhi
 		if (args[0].equalsIgnoreCase("sayhi")) {
-			
+
 			// makes the player chat the message, Hello Everyone
 			player.chat(ChatColor.GREEN + "Hello everyone!");
-			
+
 			return true;
+		} else {
+			player.sendMessage(CHAT_PREFIX + ChatColor.RED + "Invalid usage or arguments.");
+			return false;
 		}
-		return false;
 	}
 
 }
