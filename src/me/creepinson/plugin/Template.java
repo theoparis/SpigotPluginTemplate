@@ -12,11 +12,7 @@ import net.md_5.bungee.api.ChatColor;
  * 
  * @author Creepinson101
  * 
- *         This is a Spigot Template for complete beginners. Feel free to use it
- *         in any of your plugins! This template includes a few utilities made
- *         both by me, and some other programmers out there.
- *
- */
+**/
 public class Template extends JavaPlugin {
 
 	// Feel free to change this to your own plugin's name and color of your choice.
@@ -60,10 +56,10 @@ public class Template extends JavaPlugin {
 
 		/*
 		 * This line lets you send out information to the console. In this case it would
-		 * say: Template-Plugin - Version 1.0.0 - has been enabled!
+		 * say: Yay, Template-Plugin is now enabled!
 		 */
 		this.getLogger()
-				.info(this.pdfFile.getName() + " - Version " + this.pdfFile.getVersion() + " - has been enabled!");
+				.info("Yay, " + this.pdfFile.getName() + " is now enabled!");
 	}
 
 }
