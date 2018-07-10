@@ -23,23 +23,21 @@ public class Template extends JavaPlugin {
 
 	PluginDescriptionFile pdfFile; // plugin.yml
 
+	// Called when the plugin is disabled, such as when you reload the server.
 	public void onDisable() {
-		plugin = getPlugin(Template.class);
-		this.pdfFile = getDescription();
-
+		
 	}
 
 	public static Template getPlugin() { // getter for the static plugin instance
 		return plugin;
 	}
-
-	public PluginDescriptionFile getPdfFile() {
-		return pdfFile;
-	}
-
+	
+	// Called when the plugin is enabled. It is used to set up variables and to register things such as commands.
+	@Override
 	public void onEnable() {
+		plugin = getPlugin(Template.class);
 		PluginManager pm = getServer().getPluginManager();
-		this.pdfFile = getDescription();
+
 		/*
 		 * Register a command to the list of usable commands. If you don't register the
 		 * command, it won't work! Also if you change the command name, make sure to

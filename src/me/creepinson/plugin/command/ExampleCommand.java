@@ -24,7 +24,7 @@ public class ExampleCommand implements CommandExecutor {
 		   CHAT_PREFIX is the variable from the Template plugin class and can be removed
 		   if unwanted. 
 		*/
-		if (sender instanceof ConsoleCommandSender) {
+		if (!(sender instanceof Player)) {
 			sender.sendMessage(CHAT_PREFIX +  ChatColor.WHITE + " > " + ChatColor.RED + "You cannot run this command from the console!");
 			return false;
 		}
