@@ -1,0 +1,7 @@
+main: me.creepinson.plugin.Template
+name: TemplatePlugin
+author: Creepinson
+version: 1.0.0
+commands:
+    example:
+        description: An example command...
